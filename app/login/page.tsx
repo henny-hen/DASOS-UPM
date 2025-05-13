@@ -1,0 +1,116 @@
+'use client';
+
+import { useState } from 'react';
+import { useAuth } from '@/context/auth';
+import Image from 'next/image';
+import Link from 'next/link';
+
+export default function Login() {
+  const { login, loading, error } = useAuth();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Logging in with:', { email, password });
+    await login(email, password);
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#2c015e] via-[#470296] to-[#2c015e]">
+      <div className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg shadow-xl border border-purple-300 border-opacity-20 w-full max-w-md">
+        {/* Logo and Header */}
+        <div className="flex flex-col items-center mb-8">
+          <div className="w-20 h-20 bg-white rounded-full p-4 mb-4 flex items-center justify-center">
+            <div className="w-16 h-16 relative">
+              <Image 
+                src="/upm-logo.png" 
+                alt="UPM Logo"
+                width={64}
+                height={64}
+                className="rounded"
+              />
+            </div>
+          </div>
+          <h1 className="text-2xl font-bold text-fuchsia-950">GAUSS UPM</h1>
+          <p className="text-purple-400 mt-2 text-center">
+            Inicia sesión para acceder a tu información académica
+          </p>
+        </div>
+
+        {/* Error Alert */}
+        {error && (
+          <div className="bg-red-900 bg-opacity-40 text-red-200 p-3 rounded-lg mb-6 text-sm">
+            <div className="flex items-center">
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>{error}</span>
+            </div>
+          </div>
+        )}
+
+        {/* Login Form */}
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-purple-500 text-sm font-medium mb-2">
+              Correo electrónico
+            </label>
+            <input
+              id="email"
+              type="email"
+              className="w-full p-3 bg-white bg-opacity-10 text-gray-500 border border-purple-300 border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+              placeholder="correo@upm.es"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <p className="text-xs text-purple-200 mt-1">
+              Demo: student@example.com
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <label htmlFor="password" className="block text-purple-500 text-sm font-medium mb-2">
+              Contraseña
+            </label>
+            <input
+              id="password"
+              type="password"
+              className="w-full p-3 bg-white bg-opacity-10 text-gray-500 border border-purple-300 border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+              placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <p className="text-xs text-purple-200 mt-1">
+              Demo: cualquier contraseña vale
+            </p>
+          </div>
+
+
+
+          <button
+            type="submit"
+            className="w-full bg-purple-600 hover:bg-purple-500 text-white p-3 rounded-md transition-colors font-medium flex items-center justify-center"
+            disabled={loading}
+          >
+            {loading ? (
+              <>
+                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Iniciando sesión...
+              </>
+            ) : (
+              'Iniciar sesión'
+            )}
+          </button>
+        </form>
+
+        
+      </div>
+    </div>
+  );
+}
