@@ -8,12 +8,10 @@ import {
   getCorrelations,
   getSubjectInsights
 } from '@/lib/api';
-import Link from 'next/link';
 import PerformanceChart from '@/components/PerformanceChart';
 import FacultyChanges from '@/components/FacultyChanges';
 import EvaluationMethods from '@/components/EvaluationMethods';
 import InsightCard from '@/components/InsightCard';
-import { Subject } from '@/types';
 
 interface SubjectDetailsPageProps {
   params: {

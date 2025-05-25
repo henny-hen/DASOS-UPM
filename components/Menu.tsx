@@ -72,8 +72,8 @@ function Menu({ user }: { user: any }) {
       <div className='h-full bg-[#2c015e] p-4 flex flex-col border-r border-white border-opacity-20'>
         {/* Logo */}
         <Link href="/dashboard" className="flex items-center justify-center gap-2 font-bold p-5">
-          <Image src="/upm-logo.png" alt="UPM Logo" width={32} height={32} className="rounded" />
-          <span className="hidden lg:block text-white">GaussUPM</span>
+          <Image src="/upm-logo.png" alt="UPM Logo" width={32} height={32} className="rounded border-white border-2" />
+          <span className="hidden lg:block text-white">DASOS UPM</span>
         </Link>
 
         {/* User info */}

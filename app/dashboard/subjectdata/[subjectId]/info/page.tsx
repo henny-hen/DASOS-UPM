@@ -6,6 +6,7 @@ import FacultyList from '@/components/FacultyList';
 import ResourcesList from '@/components/ResourcesList';
 import EvaluationDetails from '@/components/EvaluationDetails';
 import { UpmSubject } from '@/types/upm-api';
+import { types } from 'util';
 
 interface SubjectInfoPageProps {
   params: {
@@ -13,8 +14,11 @@ interface SubjectInfoPageProps {
   };
 }
 
-async function SubjectInfoPage({ params }: SubjectInfoPageProps) {
-  const { subjectId } = params;
+type Paramms = Promise<{
+  subjectId: string;}>;
+
+async function SubjectInfoPage({ params }: { params: Paramms }) {
+  const { subjectId } = await params;
   
   // Fetch subject details and UPM API data
   let subject;
@@ -31,7 +35,7 @@ async function SubjectInfoPage({ params }: SubjectInfoPageProps) {
     
     // Fetch UPM API data
     upmData = await getUpmApiData(subjectId, subject.academic_year.replace('/','-'), subject.semester.trim().toLowerCase() === 'segundo' ? '2S' : '1S');
-  } catch (error) {
+  } catch (error) {         
     console.error('Error fetching subject details:', error);
     // Don't return notFound here since we still have the basic subject data
   }
@@ -70,7 +74,7 @@ async function SubjectInfoPage({ params }: SubjectInfoPageProps) {
         {upmData && (
           <div className="mt-4 p-4 bg-white bg-opacity-5 rounded-lg">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6">
-              <div>
+              <div> 
                 <h3 className="text-sm font-medium text-purple-600">Departamento</h3>
                 <p className="text-purple-950">{upmData.depto}</p>
               </div>

@@ -13,8 +13,7 @@ import {
   LinearScale, 
   CategoryScale, 
   Tooltip, 
-  Legend, 
-  ChartTypeRegistry 
+  Legend
 } from 'chart.js';
 
 Chart.register(

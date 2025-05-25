@@ -1,8 +1,6 @@
 'use client';
 
 import React, { ReactNode, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import Menu from '@/components/Menu';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/context/auth';

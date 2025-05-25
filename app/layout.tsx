@@ -6,8 +6,8 @@ import { AuthProvider } from '@/context/auth'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Gauss UPM',
-  description: 'Academic performance dashboard for UPM students',
+  title: 'DASOS UPM',
+  description: 'Dashboard de datos academicos para estudiantes de la UPM',
 }
 
 export default function RootLayout({

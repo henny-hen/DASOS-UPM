@@ -1,14 +1,13 @@
 'use client';
 
-import React, { ReactNode, use } from 'react';
+import React, { ReactNode,  } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-interface SubjectDetailLayoutProps {
+interface SubjectDetailLayoutProps  {
   children: ReactNode;
-  params: {
-    subjectId: string;
-  };
+  params: 
+    {subjectId: string;};
+  
 }
 
 export default function SubjectDetailLayout({ 

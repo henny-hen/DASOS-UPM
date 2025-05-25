@@ -1,7 +1,6 @@
 import React from 'react';
 import { getSubjects } from '@/lib/api';
 import SubjectCard from '@/components/SubjectCard';
-import Link from 'next/link';
 import { Subject } from '@/types';
 
 async function SubjectData() {

@@ -74,8 +74,8 @@ export default function Settings() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full text-left px-4 py-3 transition-colors ${
                       activeTab === tab.id 
-                        ? 'bg-purple-600 text-white font-medium' 
-                        : 'text-purple-200 hover:bg-white hover:bg-opacity-10'
+                        ? 'bg-purple-900 text-white font-medium' 
+                        : 'text-purple-950 hover:bg-purple-900 hover:text-white hover:bg-opacity-10'
                     }`}
                   >
                     {tab.label}
@@ -92,17 +92,17 @@ export default function Settings() {
             {/* General settings */}
             {activeTab === 'general' && (
               <div>
-                <h2 className="text-xl font-bold text-white mb-6">Configuración general</h2>
+                <h2 className="text-xl font-bold text-purple-950 mb-6">Configuración general</h2>
                 
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-purple-200 text-sm font-medium mb-2">
+                    <label className="block text-purple-900 text-sm font-medium mb-2">
                       Idioma
                     </label>
                     <select
                       value={language}
                       onChange={(e) => setLanguage(e.target.value)}
-                      className="w-full p-3 bg-white bg-opacity-10 text-white border border-purple-300 border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full p-3 bg-white bg-opacity-10 text-gray-600 border border-purple-300 border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                     >
                       <option value="es">Español</option>
                       <option value="en">English</option>
@@ -111,11 +111,11 @@ export default function Settings() {
                   </div>
                   
                   <div>
-                    <label className="block text-purple-200 text-sm font-medium mb-2">
+                    <label className="block text-purple-900 text-sm font-medium mb-2">
                       Zona horaria
                     </label>
                     <select
-                      className="w-full p-3 bg-white bg-opacity-10 text-white border border-purple-300 border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full p-3 bg-white bg-opacity-10 text-gray-600 border border-purple-300 border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                     >
                       <option value="Europe/Madrid">Europe/Madrid (UTC+01:00)</option>
                       <option value="UTC">UTC</option>
@@ -129,13 +129,13 @@ export default function Settings() {
             {/* Notifications settings */}
             {activeTab === 'notifications' && (
               <div>
-                <h2 className="text-xl font-bold text-white mb-6">Configuración de notificaciones</h2>
+                <h2 className="text-xl font-bold text-purple-950 mb-6">Configuración de notificaciones</h2>
                 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-white font-medium">Notificaciones por correo</h3>
-                      <p className="text-purple-200 text-sm">Recibir notificaciones por correo electrónico</p>
+                      <h3 className="text-purple-950 font-medium">Notificaciones por correo</h3>
+                      <p className="text-purple-600 text-sm">Recibir notificaciones por correo electrónico</p>
                     </div>
                     <div className="relative">
                       <input 
@@ -147,10 +147,10 @@ export default function Settings() {
                       />
                       <label 
                         htmlFor="email-notifications"
-                        className={`block w-14 h-7 rounded-full transition-colors ${notifications.email ? 'bg-purple-600' : 'bg-gray-600'}`}
+                        className={`block w-14 h-7 rounded-full flex items-center transition-colors ${notifications.email ? 'bg-purple-600' : 'bg-gray-600'}`}
                       >
                         <span 
-                          className={`block w-5 h-5 mt-1 ml-1 bg-white rounded-full transition-transform ${notifications.email ? 'transform translate-x-7' : ''}`} 
+                          className={`block w-5 h-5 ml-1 bg-white rounded-full transition-transform ${notifications.email ? 'transform translate-x-7' : ''}`} 
                         />
                       </label>
                     </div>
@@ -158,8 +158,8 @@ export default function Settings() {
                   
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-white font-medium">Notificaciones del navegador</h3>
-                      <p className="text-purple-200 text-sm">Recibir notificaciones en el navegador</p>
+                      <h3 className="text-purple-950 font-medium">Notificaciones del navegador</h3>
+                      <p className="text-purple-600 text-sm">Recibir notificaciones en el navegador</p>
                     </div>
                     <div className="relative">
                       <input 
@@ -171,10 +171,10 @@ export default function Settings() {
                       />
                       <label 
                         htmlFor="browser-notifications"
-                        className={`block w-14 h-7 rounded-full transition-colors ${notifications.browser ? 'bg-purple-600' : 'bg-gray-600'}`}
+                        className={`block w-14 h-7 rounded-full flex items-center transition-colors ${notifications.browser ? 'bg-purple-600' : 'bg-gray-600'}`}
                       >
                         <span 
-                          className={`block w-5 h-5 mt-1 ml-1 bg-white rounded-full transition-transform ${notifications.browser ? 'transform translate-x-7' : ''}`} 
+                          className={`block w-5 h-5 ml-1 bg-white rounded-full transition-transform ${notifications.browser ? 'transform translate-x-7' : ''}`} 
                         />
                       </label>
                     </div>
@@ -182,8 +182,8 @@ export default function Settings() {
                   
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-white font-medium">Actualizaciones del sistema</h3>
-                      <p className="text-purple-200 text-sm">Recibir notificaciones sobre actualizaciones</p>
+                      <h3 className="text-purple-950 font-medium">Actualizaciones del sistema</h3>
+                      <p className="text-purple-600 text-sm">Recibir notificaciones sobre actualizaciones</p>
                     </div>
                     <div className="relative">
                       <input 
@@ -195,10 +195,10 @@ export default function Settings() {
                       />
                       <label 
                         htmlFor="updates-notifications"
-                        className={`block w-14 h-7 rounded-full transition-colors ${notifications.updates ? 'bg-purple-600' : 'bg-gray-600'}`}
+                        className={`block w-14 h-7 rounded-full flex items-center transition-colors ${notifications.updates ? 'bg-purple-600' : 'bg-gray-600'}`}
                       >
                         <span 
-                          className={`block w-5 h-5 mt-1 ml-1 bg-white rounded-full transition-transform ${notifications.updates ? 'transform translate-x-7' : ''}`} 
+                          className={`block w-5 h-5 ml-1 bg-white rounded-full transition-transform ${notifications.updates ? 'transform translate-x-7' : ''}`} 
                         />
                       </label>
                     </div>
@@ -206,8 +206,8 @@ export default function Settings() {
                   
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-white font-medium">Noticias y eventos</h3>
-                      <p className="text-purple-200 text-sm">Recibir notificaciones sobre noticias y eventos</p>
+                      <h3 className="text-purple-950 font-medium">Noticias y eventos</h3>
+                      <p className="text-purple-600 text-sm">Recibir notificaciones sobre noticias y eventos</p>
                     </div>
                     <div className="relative">
                       <input 
@@ -219,10 +219,10 @@ export default function Settings() {
                       />
                       <label 
                         htmlFor="news-notifications"
-                        className={`block w-14 h-7 rounded-full transition-colors ${notifications.news ? 'bg-purple-600' : 'bg-gray-600'}`}
+                        className={`block w-14 h-7 rounded-full flex items-center transition-colors ${notifications.news ? 'bg-purple-600' : 'bg-gray-600'}`}
                       >
                         <span 
-                          className={`block w-5 h-5 mt-1 ml-1 bg-white rounded-full transition-transform ${notifications.news ? 'transform translate-x-7' : ''}`} 
+                          className={`block w-5 h-5  ml-1 bg-white rounded-full transition-transform ${notifications.news ? 'transform translate-x-7' : ''}`} 
                         />
                       </label>
                     </div>
@@ -234,45 +234,45 @@ export default function Settings() {
             {/* Privacy and security settings */}
             {activeTab === 'privacy' && (
               <div>
-                <h2 className="text-xl font-bold text-white mb-6">Privacidad y seguridad</h2>
+                <h2 className="text-xl font-bold text-purple-950 mb-6">Privacidad y seguridad</h2>
                 
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-white font-medium mb-2">Cambiar contraseña</h3>
+                    <h3 className="text-purple-600 font-medium mb-2">Cambiar contraseña</h3>
                     <div className="space-y-4">
                       <div>
-                        <label className="block text-purple-200 text-sm font-medium mb-2">
+                        <label className="block text-purple-400 text-sm font-medium mb-2">
                           Contraseña actual
                         </label>
                         <input
                           type="password"
-                          className="w-full p-3 bg-white bg-opacity-10 text-white border border-purple-300 border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                          className="w-full p-3 bg-white bg-opacity-10 text-gray-400 border border-purple-300 border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                           placeholder="••••••••"
                         />
                       </div>
                       <div>
-                        <label className="block text-purple-200 text-sm font-medium mb-2">
+                        <label className="block text-purple-400 text-sm mt-4 font-medium mb-2">
                           Nueva contraseña
                         </label>
                         <input
                           type="password"
-                          className="w-full p-3 bg-white bg-opacity-10 text-white border border-purple-300 border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                          className="w-full p-3 bg-white bg-opacity-10 text-gray-400 border border-purple-300 border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                           placeholder="••••••••"
                         />
                       </div>
                       <div>
-                        <label className="block text-purple-200 text-sm font-medium mb-2">
+                        <label className="block text-purple-400 text-sm mt-4 font-medium mb-2">
                           Confirmar nueva contraseña
                         </label>
                         <input
                           type="password"
-                          className="w-full p-3 bg-white bg-opacity-10 text-white border border-purple-300 border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                          className="w-full p-3 bg-white bg-opacity-10 text-gray-400 border border-purple-300 border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                           placeholder="••••••••"
                         />
                       </div>
                       <div>
                         <button
-                          className="bg-purple-600 hover:bg-purple-500 text-white px-4 py-2 rounded-md transition-colors"
+                          className="bg-purple-600 hover:bg-purple-500 text-white mt-6 mb-8 px-4 py-2 rounded-md transition-colors"
                         >
                           Cambiar contraseña
                         </button>
@@ -281,16 +281,16 @@ export default function Settings() {
                   </div>
                   
                   <div className="border-t border-purple-800 pt-6">
-                    <h3 className="text-white font-medium mb-2">Sesiones activas</h3>
-                    <p className="text-purple-200 text-sm mb-2">Estas son tus sesiones activas actualmente.</p>
+                    <h3 className="text-purple-600 font-medium mb-2">Sesiones activas</h3>
+                    <p className="text-purple-400 text-sm mb-2">Estas son tus sesiones activas actualmente.</p>
                     
                     <div className="space-y-4">
                       <div className="flex items-center justify-between bg-white bg-opacity-5 p-3 rounded-lg">
                         <div className="flex items-center">
                           <div className="bg-green-500 rounded-full w-2 h-2 mr-2"></div>
                           <div>
-                            <p className="text-white text-sm">Madrid, España (Actual)</p>
-                            <p className="text-purple-200 text-xs">Última actividad: Hace 1 minuto</p>
+                            <p className="text-purple-600 text-sm">Madrid, España (Actual)</p>
+                            <p className="text-purple-600 text-xs">Última actividad: Hace 1 minuto</p>
                           </div>
                         </div>
                         <button className="text-purple-300 hover:text-red-300 text-sm">
@@ -306,17 +306,17 @@ export default function Settings() {
             {/* Appearance settings */}
             {activeTab === 'appearance' && (
               <div>
-                <h2 className="text-xl font-bold text-white mb-6">Apariencia</h2>
+                <h2 className="text-xl font-bold text-purple-950 mb-6">Apariencia</h2>
                 
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-purple-200 text-sm font-medium mb-2">
+                    <label className="block text-purple-600 text-sm font-medium mb-2">
                       Tema
                     </label>
                     <div className="grid grid-cols-3 gap-4">
                       <div 
                         className={`cursor-pointer p-4 rounded-lg flex flex-col items-center ${
-                          theme === 'dark' ? 'bg-purple-600' : 'bg-white bg-opacity-5'
+                          theme === 'dark' ? 'bg-purple-600 text-white' : 'bg-white text-purple-600 bg-opacity-5'
                         }`}
                         onClick={() => setTheme('dark')}
                       >
@@ -325,12 +325,12 @@ export default function Settings() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                           </svg>
                         </div>
-                        <span className="text-white text-sm">Oscuro</span>
+                        <span className="text-sm">Oscuro</span>
                       </div>
                       
                       <div 
                         className={`cursor-pointer p-4 rounded-lg flex flex-col items-center ${
-                          theme === 'light' ? 'bg-purple-600' : 'bg-white bg-opacity-5'
+                          theme === 'light' ? 'bg-purple-600 text-white' : 'bg-white text-purple-600 bg-opacity-5'
                         }`}
                         onClick={() => setTheme('light')}
                       >
@@ -339,12 +339,12 @@ export default function Settings() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                           </svg>
                         </div>
-                        <span className="text-white text-sm">Claro</span>
+                        <span className="text-sm">Claro</span>
                       </div>
                       
                       <div 
                         className={`cursor-pointer p-4 rounded-lg flex flex-col items-center ${
-                          theme === 'system' ? 'bg-purple-600' : 'bg-white bg-opacity-5'
+                          theme === 'system' ? 'bg-purple-600 text-white' : 'bg-white text-purple-600 bg-opacity-5'
                         }`}
                         onClick={() => setTheme('system')}
                       >
@@ -353,7 +353,7 @@ export default function Settings() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
                         </div>
-                        <span className="text-white text-sm">Sistema</span>
+                        <span className="text-sm">Sistema</span>
                       </div>
                     </div>
                   </div>

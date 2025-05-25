@@ -73,7 +73,7 @@ export default function RecommendationList({ insights }: RecommendationListProps
           
           {facultyInsight && (
             <p className="text-sm text-white opacity-90 mb-3 italic border-l-2 border-purple-400 pl-3">
-              "{facultyInsight}"
+              {facultyInsight} 
             </p>
           )}
           
@@ -95,7 +95,7 @@ export default function RecommendationList({ insights }: RecommendationListProps
           
           {evaluationInsight && (
             <p className="text-sm text-white opacity-90 mb-3 italic border-l-2 border-purple-400 pl-3">
-              "{evaluationInsight}"
+              {evaluationInsight}
             </p>
           )}
           

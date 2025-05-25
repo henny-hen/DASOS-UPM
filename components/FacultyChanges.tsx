@@ -15,8 +15,7 @@ import {
   LineController,
   Title,
   Tooltip, 
-  Legend, 
-  ChartTypeRegistry 
+  Legend
 } from 'chart.js';
 
 
