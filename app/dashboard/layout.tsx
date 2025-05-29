@@ -2,6 +2,7 @@
 
 import React, { ReactNode, useEffect } from 'react';
 import Menu from '@/components/Menu';
+import type { Metadata } from 'next'
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/context/auth';
 

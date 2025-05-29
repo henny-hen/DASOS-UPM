@@ -95,7 +95,7 @@ export default function InsightCard({ insights }: InsightCardProps) {
       {/* Trend Information */}
       <div className="mb-6">
         <div className="flex items-center justify-between mb-2">
-          <h4 className="text-purple-500 font-medium">Tendencia general</h4>
+          <h4 className="text-purple-700 font-medium">Tendencia general</h4>
           <span className={`px-3 py-1 rounded-full text-sm ${getTrendColor(insights.trend_direction)}`}>
             {insights.trend_direction === 'improving' ? 'Mejorando' : 
              insights.trend_direction === 'declining' ? 'Empeorando' : 'Estable'}
@@ -103,7 +103,7 @@ export default function InsightCard({ insights }: InsightCardProps) {
         </div>
         
         <div className="flex items-center mb-2">
-          <span className="text-sm text-purple-500 w-64">Cambio medio de rendimiento:</span>
+          <span className="text-sm text-purple-700 w-64">Cambio medio de rendimiento:</span>
           <span className={`text-sm font-medium ${insights.avg_performance_change >= 0 ? 'text-green-400' : 'text-black'}`}>
             {insights.avg_performance_change >= 0 ? '+' : ''}{insights.avg_performance_change.toFixed(2)}%
           </span>
@@ -121,7 +121,7 @@ export default function InsightCard({ insights }: InsightCardProps) {
         {/* Faculty Impact */}
         <div className="bg-white bg-opacity-5 rounded-lg p-4">
           <div className="flex items-center justify-between mb-2">
-            <h4 className="text-purple-500 font-medium">Impacto de cambios en profesorado</h4>
+            <h4 className="text-purple-700 font-medium">Impacto de cambios en profesorado</h4>
             <span className={`px-2 py-1 rounded-full text-xs text-white ${getImpactColor(insights.faculty_impact_type)}`}>
               {insights.faculty_impact_type === 'positive' ? 'Positivo' : 
                insights.faculty_impact_type === 'negative' ? 'Negativo' : 'Neutro'}
@@ -138,7 +138,7 @@ export default function InsightCard({ insights }: InsightCardProps) {
         {/* Evaluation Impact */}
         <div className="bg-white bg-opacity-5 rounded-lg p-4">
           <div className="flex items-center justify-between mb-2">
-            <h4 className="text-purple-500 font-medium">Impacto de cambios en evaluación</h4>
+            <h4 className="text-purple-700 font-medium">Impacto de cambios en evaluación</h4>
             <span className={`px-2 py-1 rounded-full text-xs text-white ${getImpactColor(insights.evaluation_impact_type)}`}>
               {insights.evaluation_impact_type === 'positive' ? 'Positivo' : 
                insights.evaluation_impact_type === 'negative' ? 'Negativo' : 'Neutro'}
@@ -157,7 +157,7 @@ export default function InsightCard({ insights }: InsightCardProps) {
       
       {recommendations.length > 0 && (
         <div>
-          <h4 className="text-purple-500 font-medium mb-3">Resumen</h4>
+          <h4 className="text-purple-700 font-medium mb-3">Resumen</h4>
           <ul className="space-y-2">
             {recommendations.map((rec: {text: string, type: string}, index:number) => (
               <li key={index} className="flex items-start">

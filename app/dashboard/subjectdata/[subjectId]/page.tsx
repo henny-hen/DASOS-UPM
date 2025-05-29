@@ -89,7 +89,7 @@ async function SubjectDetailsPage({ params }: SubjectDetailsPageProps) {
               <h3 className="text-sm font-medium text-purple-600 mb-2">Tasa de rendimiento</h3>
               <div className="flex items-end">
                 <span className="text-3xl font-bold text-purple-900">{subject.performance_rate.toFixed(1)}%</span>
-                <span className="text-sm text-purple-500 ml-2 mb-1">aprobados / matriculados</span>
+                <span className="text-sm text-purple-700 ml-2 mb-1">aprobados / matriculados</span>
               </div>
             </div>
             
@@ -98,7 +98,7 @@ async function SubjectDetailsPage({ params }: SubjectDetailsPageProps) {
                 <h3 className="text-sm font-medium text-purple-600 mb-2">Tasa de éxito</h3>
                 <div className="flex items-end">
                   <span className="text-3xl font-bold text-purple-900">{subject.success_rate.toFixed(1)}%</span>
-                  <span className="text-sm text-purple-500 ml-2 mb-1">aprobados / presentados</span>
+                  <span className="text-sm text-purple-700 ml-2 mb-1">aprobados / presentados</span>
                 </div>
               </div>
             )}
@@ -108,7 +108,7 @@ async function SubjectDetailsPage({ params }: SubjectDetailsPageProps) {
                 <h3 className="text-sm font-medium text-purple-600 mb-2">Tasa de absentismo</h3>
                 <div className="flex items-end">
                   <span className="text-3xl font-bold text-purple-900">{subject.absenteeism_rate.toFixed(1)}%</span>
-                  <span className="text-sm text-purple-500 ml-2 mb-1">no presentados / matriculados</span>
+                  <span className="text-sm text-purple-700 ml-2 mb-1">no presentados / matriculados</span>
                 </div>
               </div>
             )}
@@ -122,20 +122,20 @@ async function SubjectDetailsPage({ params }: SubjectDetailsPageProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
                 <span className="text-xl font-bold text-purple-900">{subject.total_enrolled}</span>
-                <span className="text-sm text-purple-500 ml-2">estudiantes totales</span>
+                <span className="text-sm text-purple-700 ml-2">estudiantes totales</span>
               </div>
               
               {subject.first_time !== undefined && (
                 <div>
                   <span className="text-xl font-bold text-purple-900">{subject.first_time}</span>
-                  <span className="text-sm text-purple-500 ml-2">primera matrícula</span>
+                  <span className="text-sm text-purple-700 ml-2">primera matrícula</span>
                 </div>
               )}
               
               {subject.partial_dedication !== undefined && (
                 <div>
                   <span className="text-xl font-bold text-purple-900">{subject.partial_dedication}</span>
-                  <span className="text-sm text-purple-500 ml-2">dedicación parcial</span>
+                  <span className="text-sm text-purple-700 ml-2">dedicación parcial</span>
                 </div>
               )}
             </div>
