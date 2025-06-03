@@ -22,7 +22,7 @@ const pageVariants = {
 const pageTransition = {
   type: 'tween',
   ease: 'easeOut',
-  duration: 0.4,
+  duration: 0.2,
 };
 
 export default function Template({ children }: TemplateProps) {

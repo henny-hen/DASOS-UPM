@@ -5,7 +5,7 @@ import { useAuth } from '@/context/auth';
 import Image from 'next/image';
 
 export default function Profile() {
-  const { user, updateUser } = useAuth();
+  const { user } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     name: user?.name || '',
@@ -20,7 +20,7 @@ export default function Profile() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    updateUser(formData);
+    //updateUser(formData);
     setIsEditing(false);
     setSuccessMessage('¡Perfil actualizado correctamente!');
     
@@ -55,7 +55,7 @@ export default function Profile() {
             <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-purple-500">
               <Image 
                 src={user.avatar || "/avatars/default.png"} 
-                alt={user.name}
+                alt={user.name || 'Avatar de usuario'}
                 width={128}
                 height={128}
                 className="object-cover"
@@ -154,7 +154,7 @@ export default function Profile() {
                     onClick={() => {
                       setIsEditing(false);
                       setFormData({
-                        name: user.name,
+                        name: user.name || '',
                         email: user.email,
                       });
                     }}

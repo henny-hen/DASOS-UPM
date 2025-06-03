@@ -39,7 +39,9 @@ async function SubjectInfoPage({ params }: { params: Paramms }) {
     console.error('Error fetching subject details:', error);
     // Don't return notFound here since we still have the basic subject data
   }
-
+  if (!subject) {
+    return notFound();
+  }
   return (
     <div>
       {/* Subject header */}

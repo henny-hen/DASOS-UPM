@@ -160,7 +160,7 @@ export default function PerformanceChart({
     <div className="bg-white bg-opacity-10 backdrop-blur-lg bg-opacity-10  drop-shadow-lg rounded-2xl p-4 shadow-lg ">
       <h3 className="text-xl font-medium font-outfit text-purple-900 mb-4">{title}</h3>
       <div style={{ height: `${height}px` }}>
-        <canvas ref={chartRef} role="img" aria-label='Gráfica de rendimiento histórico' sr-only aria-hidden="true" ></canvas>
+        <canvas ref={chartRef} role="img" aria-label='Gráfica de rendimiento histórico' sr-only="true" aria-hidden="true" ></canvas>
       </div>
     </div>
   );

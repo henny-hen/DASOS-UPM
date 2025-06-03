@@ -7,6 +7,9 @@ import Cookies from 'js-cookie';
 interface User {
   email: string;
   name?: string;
+  avatar?: string; // Optional avatar URL
+  role?: 'professor' | 'student'; // Optional role
+  id?: string; // Optional user ID
 }
 
 interface AuthContextType {

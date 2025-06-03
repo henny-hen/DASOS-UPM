@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 interface SubjectDetailLayoutProps  {
   children: ReactNode;
-  params: 
-    {subjectId: string;};
+  params: Promise<{
+    subjectId: string;
+  }>;
   
 }
 
@@ -15,9 +16,17 @@ export default function SubjectDetailLayout({
   params 
 }: SubjectDetailLayoutProps) {
   // Unwrap params safely with React.use()
-  const { subjectId } = params; 
+    const [subjectId, setSubjectId] = React.useState<string>('');
+
   const pathname = usePathname();
   
+
+  React.useEffect(() => {
+    params.then(({ subjectId }) => {
+      setSubjectId(subjectId);
+    });
+  }, [params]);
+
   // Determine which tab is active
   const isInfoPage = pathname.includes('/info');
   

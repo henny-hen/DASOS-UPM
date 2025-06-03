@@ -14,13 +14,13 @@ import EvaluationMethods from '@/components/EvaluationMethods';
 import InsightCard from '@/components/InsightCard';
 
 interface SubjectDetailsPageProps {
-  params: {
+  params: Promise<{
     subjectId: string;
-  };
+  }>;
 }
 
 async function SubjectDetailsPage({ params }: SubjectDetailsPageProps) {
-  const { subjectId } = params;
+  const { subjectId } = await params;
   
   // Fetch all necessary data for this subject
   let subject;
