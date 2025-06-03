@@ -29,15 +29,15 @@ export default function EvaluationDetails({
   return (
     <div>
       {/* Evaluation Activities */}
-      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg overflow-hidden shadow-lg border border-purple-300 border-opacity-20 mb-6">
+      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl bg-opacity-10  drop-shadow-lg overflow-hidden shadow-lg mb-6">
         <div className="p-4 bg-purple-900 bg-opacity-50">
-          <h3 className="text-xl font-bold text-white">Actividades de evaluación</h3>
+          <h3 className="text-2xl font-outfit font-bold text-white">Actividades de evaluación</h3>
         </div>
         
         {/* Continuous evaluation */}
         {continuousActivities.length > 0 && (
           <div className="p-4 border-b border-purple-900 border-opacity-30">
-            <h4 className="text-lg font-semibold text-purple-700 mb-3">Evaluación continua</h4>
+            <h4 className="text-lg font-semibold font-outfit text-purple-700 mb-3">Evaluación continua</h4>
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
@@ -51,7 +51,7 @@ export default function EvaluationDetails({
                     <th className="py-2 px-3 text-left text-xs font-medium text-white">Presencial</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-purple-900 divide-opacity-30">
+                <tbody className="divide-y divide-purple-900 font-outfit divide-opacity-30">
                   {continuousActivities.map((activity) => (
                     <tr key={activity.id} className="hover:bg-white hover:bg-opacity-5">
                       <td className="py-2 px-3 text-sm text-purple-950">{activity.DENOMINACION}</td>
@@ -72,7 +72,7 @@ export default function EvaluationDetails({
         {/* Final exam */}
         {finalActivities.length > 0 && (
           <div className="p-4 border-b border-purple-900 border-opacity-30">
-            <h4 className="text-lg font-semibold text-purple-700 mb-3">Evaluación global</h4>
+            <h4 className="text-lg font-semibold font-outfit text-purple-700 mb-3">Evaluación global</h4>
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
@@ -88,7 +88,7 @@ export default function EvaluationDetails({
                 </thead>
                 <tbody className="divide-y divide-purple-900 divide-opacity-30">
                   {finalActivities.map((activity) => (
-                    <tr key={activity.id} className="hover:bg-white hover:bg-opacity-5">
+                    <tr key={activity.id} className="hover:bg-white font-outfit hover:bg-opacity-5">
                       <td className="py-2 px-3 text-sm text-purple-950">{activity.DENOMINACION}</td>
                       <td className="py-2 px-3 text-sm text-purple-950">{activity.SEMANA}</td>
                       <td className="py-2 px-3 text-sm text-purple-950">{activity.DURACION}</td>
@@ -107,7 +107,7 @@ export default function EvaluationDetails({
         {/* Extraordinary evaluation */}
         {extraordinaryActivities.length > 0 && (
           <div className="p-4">
-            <h4 className="text-lg font-semibold text-purple-900 mb-3">Evaluación extraordinaria</h4>
+            <h4 className="text-lg font-semibold font-outfit text-purple-900 mb-3">Evaluación extraordinaria</h4>
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
@@ -123,7 +123,7 @@ export default function EvaluationDetails({
                 </thead>
                 <tbody className="divide-y divide-purple-900 divide-opacity-30">
                   {extraordinaryActivities.map((activity) => (
-                    <tr key={activity.id} className="hover:bg-white hover:bg-opacity-5">
+                    <tr key={activity.id} className="hover:bg-white font-outfit hover:bg-opacity-5">
                       <td className="py-2 px-3 text-sm text-purple-950">{activity.DENOMINACION}</td>
                       <td className="py-2 px-3 text-sm text-purple-950">{activity.SEMANA}</td>
                       <td className="py-2 px-3 text-sm text-purple-950">{activity.DURACION}</td>
@@ -141,8 +141,8 @@ export default function EvaluationDetails({
       </div>
       
       {/* Evaluation Criteria */}
-      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 shadow-lg border border-purple-300 border-opacity-20">
-        <h3 className="text-xl font-bold text-purple-900 mb-4">Criterios de evaluación</h3>
+      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-6 shadow-lg bg-opacity-10  drop-shadow-lg">
+        <h3 className="text-2xl font-bold font-outfit text-purple-900 mb-4">Criterios de evaluación</h3>
         
         <div 
           className="prose prose-invert prose-purple max-w-none text-black"

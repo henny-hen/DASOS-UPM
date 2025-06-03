@@ -60,7 +60,7 @@ export default function RecommendationList({ insights }: RecommendationListProps
   const evaluationInsight = getEvaluationInsight();
 
   return (
-    <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 shadow-lg border border-purple-300 border-opacity-20">
+    <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 shadow-lg">
       <h3 className="text-xl font-bold text-white mb-4">Recomendaciones globales</h3>
       <p className="text-sm text-white opacity-80 mb-6">
         Basadas en el análisis de datos académicos realizado el {formatDate(insights.analysis_date)}

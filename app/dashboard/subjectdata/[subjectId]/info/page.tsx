@@ -43,24 +43,26 @@ async function SubjectInfoPage({ params }: { params: Paramms }) {
   return (
     <div>
       {/* Subject header */}
-      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 mb-6 shadow-lg border border-purple-300 border-opacity-20">
+      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-6 mb-6 shadow-lg">
         <div className="flex justify-between items-start">
-          <div>
-            <h1 className="text-3xl font-bold text-fuchsia-950 mb-2">{subject.subject_name}</h1>
-            <p className="text-purple-200">Código: {subject.subject_code}</p>
-            
-            <div className="flex gap-3 space-x-3 mt-3">
-              <span className="text-sm px-3 py-1 rounded-full bg-purple-900 text-white">
-                {subject.credits} créditos
-              </span>
-              <span className="text-sm px-3 py-1 rounded-full bg-purple-900 text-white">
-                {subject.semester} semestre
-              </span>
-              <span className="text-sm px-3 py-1 rounded-full bg-purple-900 text-white">
+            <div className='flex-1'>
+              <h1 className="text-3xl font-bold font-outfit text-fuchsia-950 mb-2">{subject.subject_name}</h1>
+              <p className="text-fuchsia-900 font-mono">{subject.subject_code}</p>
+            </div>
+
+            <div className='text-right gap-1 flex flex-col'>
+              <div className="flex gap-3 mt-3 font-outfit font-medium text-lg">
+                <div className=" text-right  px-3 py-1 rounded-xl  text-purple-900">
+                  {subject.credits} créditos
+                </div>
+                <div className="px-3  py-1 rounded-xl  text-purple-900">
+                  {subject.semester} semestre
+                </div>
+              </div>
+              <span className="text-base px-3  py-1 rounded-xl  text-purple-950">
                 {subject.academic_year}
               </span>
             </div>
-          </div>
           
           {/*<Link 
             href={`/dashboard/subjectdata/${subjectId}`}
@@ -72,31 +74,31 @@ async function SubjectInfoPage({ params }: { params: Paramms }) {
         
         {/* Additional UPM data */}
         {upmData && (
-          <div className="mt-4 p-4 bg-white bg-opacity-5 rounded-lg">
+          <div className="mt-4 p-4 bg-white bg-opacity-5 rounded-xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6">
               <div> 
-                <h3 className="text-sm font-medium text-purple-600">Departamento</h3>
-                <p className="text-purple-950">{upmData.depto}</p>
+                <h3 className="text-md font-medium text-fuchsia-900 mb-2">Departamento</h3>
+                <p className="text-purple-950 font-outfit text-base">{upmData.depto}</p>
               </div>
               
               <div>
-                <h3 className="text-sm font-medium text-purple-600">Plan de estudios</h3>
-                <p className="text-purple-950">{upmData.plan}</p>
+                <h3 className="text-md font-medium text-fuchsia-900 mb-2">Plan de estudios</h3>
+                <p className="text-purple-950 font-outfit text-base">{upmData.plan}</p>
               </div>
               
               <div>
-                <h3 className="text-sm font-medium text-purple-600">Carácter</h3>
-                <p className="text-purple-950">{upmData.caracter}</p>
+                <h3 className="text-md font-medium text-fuchsia-900 mb-2">Carácter</h3>
+                <p className="text-purple-950 font-outfit text-base">{upmData.caracter}</p>
               </div>
               
               {upmData.guia && (
                 <div>
-                  <h3 className="text-sm font-medium text-purple-600">Guía docente</h3>
+                  <h3 className="text-md font-medium text-fuchsia-900 mb-2">Guía docente</h3>
                   <a 
                     href={upmData.guia} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-purple-500 hover:text-black transition-colors underline text-sm"
+                    className="font-outfit text-purple-500 text-base hover:text-black transition-colors underline"
                   >
                     Ver guía docente completa
                   </a>
@@ -104,11 +106,6 @@ async function SubjectInfoPage({ params }: { params: Paramms }) {
               )}
             </div>
             
-            {upmData.fecha_actualizacion && (
-              <p className="text-right text-xs text-purple-200 mt-4">
-                Actualizado: {upmData.fecha_actualizacion}
-              </p>
-            )}
           </div>
         )}
       </div>
@@ -142,7 +139,7 @@ async function SubjectInfoPage({ params }: { params: Paramms }) {
       
       {/* Display message if UPM data not available */}
       {!upmData && (
-        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 shadow-lg border border-purple-300 border-opacity-20 text-center">
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 shadow-lg border border-purple-300 border-opacity-20 text-center">
           <svg className="w-12 h-12 mx-auto text-purple-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>

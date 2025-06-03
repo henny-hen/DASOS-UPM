@@ -210,10 +210,10 @@ export default function EvaluationMethods({
   }, [evaluationChanges, correlations]);
 
   return (
-    <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-4 shadow-lg border border-purple-300 border-opacity-20">
-      <h3 className="text-lg font-medium text-purple-900 mb-4">{title}</h3>
+    <div className="bg-white bg-opacity-10 backdrop-blur-lg bg-opacity-10  drop-shadow-lg rounded-2xl p-4 shadow-lg ">
+      <h3 className="text-2xl font-outfit font-medium text-purple-900 mb-4">{title}</h3>
       <div style={{ height: `${height}px` }}>
-        <canvas ref={chartRef}></canvas>
+        <canvas ref={chartRef} role="img" aria-label='Gráfica de impacto del cambio en métodos de evaluación a través de los años' sr-only aria-hidden="true"></canvas>
       </div>
       {evaluationChanges.length === 0 && (
         <div className="flex justify-center items-center h-full">

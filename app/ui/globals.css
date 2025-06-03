@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --background: radial-gradient(circle at 20% 40%, #5b21b6, #2c015e 80%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,10 +17,258 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
     --white: rgb(255,255,255);
+    font-family: 'Outfit','Inter',  sans-serif;
   }
 }
 
 
+.scrollbar-thin {
+            /* Firefox-specific   scrollbar-width: thin; */
+  scrollbar-color: #a855f7 transparent; /* thumb and track colors */
+}
+
+.font-outfit {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  letter-spacing: 0.02rem;
+}
+.font-inter {
+  font-family: 'Inter', sans-serif;
+  
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* More visible animated gradient background */
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(45deg, #2c015e, #470296, #581c87, #4c1d95, #7c3aed);
+    background-size: 300% 300%;
+    background-position: 0% 50%;
+  }
+  25% {
+    background: linear-gradient(135deg, #470296, #7c3aed, #2c015e, #8b5cf6, #581c87);
+    background-size: 300% 300%;
+    background-position: 100% 0%;
+  }
+  50% {
+    background: linear-gradient(225deg, #581c87, #a855f7, #470296, #2c015e, #7c3aed);
+    background-size: 300% 300%;
+    background-position: 100% 100%;
+  }
+  75% {
+    background: linear-gradient(315deg, #7c3aed, #2c015e, #8b5cf6, #470296, #a855f7);
+    background-size: 300% 300%;
+    background-position: 0% 100%;
+  }
+  100% {
+    background: linear-gradient(45deg, #2c015e, #470296, #581c87, #4c1d95, #7c3aed);
+    background-size: 300% 300%;
+    background-position: 0% 50%;
+  }
+}
+
+/* Enhanced gradient movement */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  25% {
+    background-position: 100% 0%;
+    filter: hue-rotate(5deg) brightness(1.1);
+  }
+  50% {
+    background-position: 100% 100%;
+    filter: hue-rotate(10deg) brightness(1);
+  }
+  75% {
+    background-position: 0% 100%;
+    filter: hue-rotate(5deg) brightness(1.1);
+  }
+  100% {
+    background-position: 0% 0%;
+    filter: hue-rotate(0deg) brightness(1);
+  }
+}
+
+/* dramatic pulsing gradient */
+@keyframes gradientPulse {
+  0% {
+    background: radial-gradient(circle at 20% 40%, #5b21b6, #2c015e 60%);
+    transform: scale(1);
+  }
+  25% {
+    background: radial-gradient(circle at 80% 20%, #7c3aed, #4c1d95 60%);
+    transform: scale(1.02);
+  }
+  50% {
+    background: radial-gradient(circle at 60% 80%, #a855f7, #581c87 60%);
+    transform: scale(1);
+  }
+  75% {
+    background: radial-gradient(circle at 30% 60%, #8b5cf6, #470296 60%);
+    transform: scale(1.02);
+  }
+  100% {
+    background: radial-gradient(circle at 20% 40%, #5b21b6, #2c015e 60%);
+    transform: scale(1);
+  }
+}
+
+/* Color-shifting wave effect */
+@keyframes colorWave {
+  0% {
+    background: linear-gradient(45deg, 
+      #2c015e 0%, 
+      #470296 25%, 
+      #581c87 50%, 
+      #7c3aed 75%, 
+      #a855f7 100%);
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+  }
+  50% {
+    background: linear-gradient(45deg, 
+      #a855f7 0%, 
+      #8b5cf6 25%, 
+      #7c3aed 50%, 
+      #470296 75%, 
+      #2c015e 100%);
+    background-size: 200% 200%;
+    background-position: 100% 50%;
+  }
+  100% {
+    background: linear-gradient(45deg, 
+      #2c015e 0%, 
+      #470296 25%, 
+      #581c87 50%, 
+      #7c3aed 75%, 
+      #a855f7 100%);
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+  }
+}
+
+/* el principall, #581c87 */
+.animated-gradient {
+  background: linear-gradient(45deg, #2c015e, #470296, #581c87, #4c1d95, #880fce);
+  background-size: 300% 300%;
+  animation: gradientMove 15s ease infinite;
+}
+
+.dramatic-gradient {
+  animation: gradientShift 12s ease infinite;
+}
+
+.pulsing-gradient {
+  animation: gradientPulse 10s ease infinite;
+}
+
+.wave-gradient {
+  animation: colorWave 15s ease infinite;
+}
+
+/* Ultra-visible rainbow effect */
+@keyframes rainbowShift {
+  0% { filter: hue-rotate(0deg) brightness(1); }
+  25% { filter: hue-rotate(15deg) brightness(1.1); }
+  50% { filter: hue-rotate(30deg) brightness(1); }
+  75% { filter: hue-rotate(15deg) brightness(1.1); }
+  100% { filter: hue-rotate(0deg) brightness(1); }
+}
+
+.rainbow-gradient {
+  background: linear-gradient(45deg, #2c015e, #470296, #581c87, #7c3aed, #a855f7);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite, rainbowShift 6s ease infinite;
+}
+
+/* Subtle breathing effect */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.01);
+    filter: brightness(1.15);
+  }
+}
+
+.breathing-bg {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* Floating particles effect */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+  }
+}
+
+.floating-particle {
+  position: absolute;
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Different particle animations */
+.particle-1 { animation-delay: 0s; animation-duration: 8s; }
+.particle-2 { animation-delay: 2s; animation-duration: 6s; }
+.particle-3 { animation-delay: 4s; animation-duration: 10s; }
+.particle-4 { animation-delay: 1s; animation-duration: 7s; }
+.particle-5 { animation-delay: 3s; animation-duration: 9s; }
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar during page transitions */
+.transitioning {
+  overflow: hidden !important;
+}
+
+/* Smooth scrollbar transition */
+.scrollable-content {
+  transition: overflow 0.3s ease;
+}
+
+/* Alternative: Hide scrollbar completely during animations */
+.no-scroll-during-animation {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.no-scroll-during-animation::-webkit-scrollbar {
+  display: none; /* WebKit browsers */
+}
+
+/* Restore scrollbar after animation */
+.scroll-restored {
+  scrollbar-width: thin;
+  scrollbar-color: #a855f7 transparent;
+}
+
+.scroll-restored::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-restored::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-restored::-webkit-scrollbar-thumb {
+  background-color: #a855f7;
+  border-radius: 4px;
+}
 
 a{
   text-decoration: none;

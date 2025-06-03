@@ -29,8 +29,8 @@ export default function SubjectDetailLayout({
       <div
           className={`absolute bottom-0 h-0.5 bg-purple-500 transition-all duration-300`}
           style={{
-            width: isInfoPage ? '180px' : '200px', // Adjust width based on the active tab
-            transform: isInfoPage ? 'translateX(200px)' : 'translateX(0)', // Adjust position
+            width: isInfoPage ? '207px' : '187px', // Adjust width based on the active tab
+            transform: isInfoPage ? 'translateX(187px)' : 'translateX(0)', // Adjust position
           }}
         ></div>        
         

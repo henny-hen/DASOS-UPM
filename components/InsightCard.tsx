@@ -14,12 +14,12 @@ export default function InsightCard({ insights }: InsightCardProps) {
     switch (trend.toLowerCase()) {
       case 'improving':
       case 'positive':
-        return 'text-green-400';
+        return 'text-green-600';
       case 'declining':
       case 'negative':
-        return 'text-red-400';
+        return 'text-red-600';
       default:
-        return 'text-yellow-400';
+        return 'text-yellow-600';
     }
   };
   
@@ -89,8 +89,8 @@ export default function InsightCard({ insights }: InsightCardProps) {
   console.log('Recommendations:', recommendations);
 
   return (
-    <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 shadow-lg border border-purple-300 border-opacity-20">
-      <h3 className="text-xl font-bold text-purple-900 mb-4">Análisis de rendimiento</h3>
+    <div className="bg-white bg-opacity-10 backdrop-blur-lg bg-opacity-10  drop-shadow-lg rounded-2xl p-6 shadow-lg ">
+      <h3 className="text-xl font-outfit font-medium text-purple-900 mb-4">Análisis de rendimiento</h3>
       
       {/* Trend Information */}
       <div className="mb-6">
@@ -104,7 +104,7 @@ export default function InsightCard({ insights }: InsightCardProps) {
         
         <div className="flex items-center mb-2">
           <span className="text-sm text-purple-700 w-64">Cambio medio de rendimiento:</span>
-          <span className={`text-sm font-medium ${insights.avg_performance_change >= 0 ? 'text-green-400' : 'text-black'}`}>
+          <span className={`text-sm font-medium ${insights.avg_performance_change >= 0 ? 'text-green-600' : 'text-black'}`}>
             {insights.avg_performance_change >= 0 ? '+' : ''}{insights.avg_performance_change.toFixed(2)}%
           </span>
         </div>
@@ -161,7 +161,7 @@ export default function InsightCard({ insights }: InsightCardProps) {
           <ul className="space-y-2">
             {recommendations.map((rec: {text: string, type: string}, index:number) => (
               <li key={index} className="flex items-start">
-                <span className="text-green-400 mr-2">•</span>
+                <span className="text-green-600 mr-2">•</span>
                 <span className="text-sm text-purple-600 opacity-80">Durante el último periodo: {rec.text}</span>
               </li>
             ))}

@@ -115,7 +115,7 @@ export default function SearchBar() {
               <li
                 key={subject.id}
                 onClick={() => handleSelectSubject(subject)}
-                className="px-4 py-3 hover:bg-white hover:bg-opacity-20 cursor-pointer text-black transition-colors"
+                className="px-4 py-3 hover:bg-gray-400 focus:bg-gray-300  hover:bg-opacity-20 cursor-pointer text-black transition-colors aria-label={subject.name} tabIndex={0} "
               >
                 {subject.name}
               </li>

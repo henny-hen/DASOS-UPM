@@ -157,10 +157,10 @@ export default function PerformanceChart({
   }, [historicalData]);
 
   return (
-    <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-4 shadow-lg border border-purple-300 border-opacity-20">
-      <h3 className="text-lg font-medium text-purple-900 mb-4">{title}</h3>
+    <div className="bg-white bg-opacity-10 backdrop-blur-lg bg-opacity-10  drop-shadow-lg rounded-2xl p-4 shadow-lg ">
+      <h3 className="text-xl font-medium font-outfit text-purple-900 mb-4">{title}</h3>
       <div style={{ height: `${height}px` }}>
-        <canvas ref={chartRef}></canvas>
+        <canvas ref={chartRef} role="img" aria-label='Gráfica de rendimiento histórico' sr-only aria-hidden="true" ></canvas>
       </div>
     </div>
   );
