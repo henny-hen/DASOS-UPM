@@ -207,7 +207,7 @@ Route protection is handled in `middleware.ts`:
 5. **Dashboard Access**: Authenticated users access dashboard features
 6. **Auto-redirect**: Automatic redirects based on authentication status
 
-## 📱 Responsive Design
+## 📱 Responsive Design (WIP)
 
 - **Mobile**: Optimized for phones (320px+)
 - **Tablet**: Enhanced experience on tablets (768px+)
