@@ -77,55 +77,7 @@ export default function SubjectCard({ subject, index = 0 }: SubjectCardProps) {
             </motion.div>
           </div>
           
-          {subject.performance_rate !== undefined && (
-            <motion.div 
-              className="mb-4"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5 + index * 0.1 }}
-            >
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-sm text-purple-600">Rendimiento</span>
-                <span className="text-lg font-bold text-purple-900">
-                  {subject.performance_rate.toFixed(1)}%
-                </span>
-              </div>
-              
-              <div className="w-full bg-purple-900 bg-opacity-30 rounded-full h-2">
-                <motion.div 
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full"
-                  initial={{ width: 0 }}
-                  animate={{ width: `${subject.performance_rate}%` }}
-                  transition={{ 
-                    duration: 0.8, 
-                    delay: 0.6 + index * 0.1,
-                    ease: "easeOut" 
-                  }}
-                />
-              </div>
-            </motion.div>
-          )}
-          
-          <motion.div 
-            className="grid grid-cols-2 gap-4 text-sm"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 + index * 0.1 }}
-          >
-            {subject.total_enrolled !== undefined && (
-              <div>
-                <div className="text-purple-600">Matriculados</div>
-                <div className="font-bold text-purple-900">{subject.total_enrolled}</div>
-              </div>
-            )}
-            
-            {subject.success_rate !== undefined && (
-              <div>
-                <div className="text-purple-600">Tasa de éxito</div>
-                <div className="font-bold text-purple-900">{subject.success_rate.toFixed(1)}%</div>
-              </div>
-            )}
-          </motion.div>
+
           
           <motion.div 
             className="mt-4 pt-4 border-t border-purple-300 border-opacity-20"

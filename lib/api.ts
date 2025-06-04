@@ -10,7 +10,7 @@ import {
   } from '@/types';
   
   // API base URL - change this to match your API server
-  const API_BASE_URL = 'http://localhost:5000/api/v1';
+  const API_BASE_URL = 'https://web-production-43ff5.up.railway.app/api/v1';
 
   // UPM API URL format
 
