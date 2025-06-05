@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ReactNode, useEffect } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import Menu from '@/components/Menu';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/context/auth';
@@ -18,6 +18,19 @@ export default function DashboardLayout({
   const { user, loading } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if we're on mobile
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 1024); // lg breakpoint
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   // Redirect to login if not authenticated
   useEffect(() => {
@@ -40,9 +53,14 @@ export default function DashboardLayout({
             className="w-60 h-70 rounded-full p-4 mb-4"
             aria-label="Loading"
           >
-            <Image src="/icons/image.svg" width={220} height={280} className="w-full h-full"
-                      aria-hidden="true" alt='loading logo'></Image>
-
+            <Image 
+              src="/icons/image.svg" 
+              width={220} 
+              height={280} 
+              className="w-full h-full"
+              aria-hidden="true" 
+              alt='loading logo'
+            />
           </div>
           <div className="h-4 w-40 bg-purple-300 bg-opacity-20 rounded mb-3"></div>
           <div className="h-3 w-32 bg-purple-300 bg-opacity-20 rounded"></div>
@@ -50,33 +68,38 @@ export default function DashboardLayout({
       </div>
     );
   }
-      {/* from-[#2c015e] via-[#470296]
-            to-[#2c015e] from-[#23014a] via-[#470296]
-            to-[#170030] 581c87 */}
+
   return (
     <div
-      className="h-screen flex bg-gradient-to-br from-[#2c015e] via-[#4c1d95] animated-gradient to-[#170030] opacity-100 backdrop-blur-sm animate-gradient text-white overflow-hidden"
+      className="h-min-screen flex bg-gradient-to-br from-[#2c015e] via-[#4c1d95] animated-gradient to-[#170030] opacity-100 backdrop-blur-sm animate-gradient text-white scrollbar-hidden overflow-hidden"
       role="main"
       tabIndex={-1}
       aria-label="Dashboard main content"
     >
+      {/* Desktop Sidebar */}
+      {!isMobile && (
+        <nav
+          className='h-screen flex w-[14%] md:w-[8%] lg:w-[14%] xl:w-[14%] fixed left-0 top-0 z-30'
+          aria-label="Sidebar navigation"
+        >
+          <Menu user={user} />
+        </nav>
+      )}
 
-      {/* Sidebar */}
-      <nav
-        className='h-screen flex w-[14%] md:w-[8%] lg:w-[14%] xl:w-[14%]'
-        aria-label="Sidebar navigation"
-
-      >
-        <Menu user={user} />
-      </nav>
+      {/* Mobile Menu */}
+      {isMobile && <Menu user={user} />}
       
       {/* Main content */}
       <main
-        className='h-screen w-[86%] md:w-[92%] lg:w-[86%] xl:w-[86%] focus:outline-none overflow-y-auto scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-transparent'
+        className={`min-h-screen focus:outline-none overflow-y-auto scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-transparent
+          ${isMobile 
+            ? 'w-full scrollbar-thumb-purple-500 scrollbar-track-transparent' 
+            : ' h-screen w-[86%] md:w-[92%] lg:w-[86%] xl:w-[86%] ml-[14%] md:ml-[8%] lg:ml-[14%] xl:ml-[14%]'
+          }
+        `}
         aria-label="Dashboard content"
       >
         {children}
-
       </main>
       
     </div>

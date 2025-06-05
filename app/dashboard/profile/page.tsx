@@ -34,11 +34,11 @@ export default function Profile() {
 
   return (
     <div className="container mx-auto px-6 py-8">
-      <h1 className="text-3xl font-bold text-white mb-8">Perfil de Usuario</h1>
+      <h1 className="text-3xl font-bold text-white font-outfit mb-8">Perfil de Usuario</h1>
       
       {/* Success message */}
       {successMessage && (
-        <div className="bg-green-900 bg-opacity-30 text-green-200 p-4 rounded-lg mb-6">
+        <div className="bg-green-900 bg-opacity-30 text-green-200 p-4 rounded-2xl mb-6">
           <div className="flex items-center">
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -50,7 +50,7 @@ export default function Profile() {
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Profile Image and Details */}
-        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 shadow-lg border border-purple-300 border-opacity-20 flex flex-col items-center">
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-purple-300 border-opacity-20 flex flex-col items-center">
           <div className="relative mb-6">
             <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-purple-500">
               <Image 
@@ -69,16 +69,16 @@ export default function Profile() {
             </button>
           </div>
           
-          <h2 className="text-xl font-bold text-purple-950 mb-1">{user.name}</h2>
+          <h2 className="text-xl font-bold text-purple-950 font-outfit mb-1">{user.name}</h2>
           <p className="text-purple-800 mb-4">{user.email}</p>
           
-          <div className="bg-purple-900 bg-opacity-30 px-4 py-2 rounded-full text-sm text-white mb-6">
+          <div className=" bg-opacity-30 px-4 py-2 rounded-full text-base font-outfit text-purple-950 font-bold mb-6">
             {user.role === 'student' ? 'Estudiante' : user.role === 'professor' ? 'Profesor' : 'Administrador'}
           </div>
           
           <button 
             onClick={() => setIsEditing(true)}
-            className="bg-purple-800 hover:bg-purple-500 text-white px-4 py-2 rounded-md transition-colors w-full"
+            className="bg-purple-900 hover:bg-purple-700 font-outfit text-white px-4 py-2 rounded-xl transition-colors w-full"
             disabled={isEditing}
           >
             Editar Perfil
@@ -87,8 +87,8 @@ export default function Profile() {
         
         {/* Profile Form */}
         <div className="lg:col-span-2">
-          <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 shadow-lg border border-purple-300 border-opacity-20">
-            <h3 className="text-xl font-bold text-purple-950 mb-6">
+          <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-6 shadow-lg ">
+            <h3 className="text-xl font-bold text-purple-950 font-outfit mb-6">
               {isEditing ? 'Editar información' : 'Información personal'}
             </h3>
             
@@ -164,7 +164,7 @@ export default function Profile() {
                   </button>
                   <button
                     type="submit"
-                    className="bg-purple-600 hover:bg-purple-500 text-white px-4 py-2 rounded-md transition-colors"
+                    className="bg-purple-900 hover:bg-purple-500 text-white px-4 py-2 rounded-xl transition-colors"
                   >
                     Guardar cambios
                   </button>

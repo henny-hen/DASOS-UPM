@@ -57,24 +57,26 @@ async function SubjectDetailsPage({ params }: SubjectDetailsPageProps) {
       {/* Subject header border border-purple-300 border-opacity-20 */}
       <div className="bg-white bg-opacity-10 backdrop-blur-lg shadow-lg  drop-shadow-lg rounded-2xl p-6 mb-6 ">
         <div className="flex justify-between items-start">
-            <div className='flex-1'>
-              <h1 className="text-3xl font-bold font-outfit text-fuchsia-950 mb-2">{subject.subject_name}</h1>
-              <p className="text-fuchsia-900 font-mono">{subject.subject_code}</p>
+              <div className=' flex flex-col'>
+                <h1 className="text-3xl font-bold font-outfit text-fuchsia-950 ">{subject.subject_name}</h1>
+                <span className="text-sm font-semibold  text-fuchsia-950 mb-2">
+                  {subject.academic_year}
+                </span>
+                <div className="flex gap-3 font-mono text-sm">
+                  
+                  <p className="text-fuchsia-900 text-right pr-2 border-r-2 border-fuchsia-800/40 border-opacity-20">{subject.subject_code}</p>
+                  <div className=" text-right pr-2 border-r-2 border-fuchsia-800/40 border-opacity-20  text-fuchsia-900">
+                    {subject.credits} créditos
+                  </div>
+                  <div className="   text-fuchsia-900">
+                    {subject.semester} semestre
+                  </div>
+                </div>
+
+
             </div>
 
-            <div className='text-right gap-1 flex flex-col'>
-              <div className="flex gap-3 mt-3 font-outfit font-medium text-lg">
-                <div className=" text-right  px-3 py-1 rounded-xl  text-purple-900">
-                  {subject.credits} créditos
-                </div>
-                <div className=" px-3  py-1 rounded-xl  text-purple-900">
-                  {subject.semester} semestre
-                </div>
-              </div>
-              <span className="text-base px-3  py-1 rounded-xl  text-purple-950">
-                {subject.academic_year}
-              </span>
-            </div>
+
          
           
           {/*<Link 

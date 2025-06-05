@@ -49,7 +49,7 @@ export default function Settings() {
 
   return (
     <div className="container mx-auto px-6 py-8">
-      <h1 className="text-3xl font-bold text-white mb-8">Configuración</h1>
+      <h1 className="text-3xl font-bold text-white mb-8 font-outfit">Configuración</h1>
       
       {/* Success message */}
       {successMessage && (
@@ -66,15 +66,15 @@ export default function Settings() {
       <div className="flex flex-col md:flex-row gap-6">
         {/* Tabs navigation */}
         <div className="md:w-1/4">
-          <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg border border-purple-900 border-opacity-20">
+          <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl shadow-lg">
             <ul>
               {tabs.map(tab => (
                 <li key={tab.id}>
                   <button
                     onClick={() => setActiveTab(tab.id)}
-                    className={`w-full text-left px-4 py-3 transition-colors ${
+                    className={`w-full text-left px-4 py-3 transition-colors rounded-md ${
                       activeTab === tab.id 
-                        ? 'bg-purple-900 text-white font-medium' 
+                        ? 'bg-purple-950 text-white font-medium' 
                         : 'text-purple-950 hover:bg-purple-900 hover:text-white hover:bg-opacity-10'
                     }`}
                   >
@@ -88,11 +88,11 @@ export default function Settings() {
         
         {/* Tab content */}
         <div className="md:w-3/4">
-          <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 shadow-lg border border-purple-300 border-opacity-20">
+          <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 shadow-xl ">
             {/* General settings */}
             {activeTab === 'general' && (
               <div>
-                <h2 className="text-xl font-bold text-purple-950 mb-6">Configuración general</h2>
+                <h2 className="text-xl font-bold text-purple-950 font-outfit mb-6">Configuración general</h2>
                 
                 <div className="space-y-6">
                   <div>
@@ -129,7 +129,7 @@ export default function Settings() {
             {/* Notifications settings */}
             {activeTab === 'notifications' && (
               <div>
-                <h2 className="text-xl font-bold text-purple-950 mb-6">Configuración de notificaciones</h2>
+                <h2 className="text-xl font-bold text-purple-950 font-outfit mb-6">Configuración de notificaciones</h2>
                 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
@@ -234,14 +234,14 @@ export default function Settings() {
             {/* Privacy and security settings */}
             {activeTab === 'privacy' && (
               <div>
-                <h2 className="text-xl font-bold text-purple-950 mb-6">Privacidad y seguridad</h2>
+                <h2 className="text-xl font-bold text-purple-950 font-outfit mb-6">Privacidad y seguridad</h2>
                 
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-purple-800 font-medium mb-2">Cambiar contraseña</h3>
+                    <h3 className="text-purple-900 font-medium mb-2">Cambiar contraseña</h3>
                     <div className="space-y-4">
                       <div>
-                        <label className="block text-purple-700 text-sm font-medium mb-2">
+                        <label className="block text-purple-800 text-sm font-medium mb-2">
                           Contraseña actual
                         </label>
                         <input
@@ -251,7 +251,7 @@ export default function Settings() {
                         />
                       </div>
                       <div>
-                        <label className="block text-purple-700 text-sm mt-4 font-medium mb-2">
+                        <label className="block text-purple-800 text-sm mt-4 font-medium mb-2">
                           Nueva contraseña
                         </label>
                         <input
@@ -261,7 +261,7 @@ export default function Settings() {
                         />
                       </div>
                       <div>
-                        <label className="block text-purple-700 text-sm mt-4 font-medium mb-2">
+                        <label className="block text-purple-800 text-sm mt-4 font-medium mb-2">
                           Confirmar nueva contraseña
                         </label>
                         <input
@@ -272,7 +272,7 @@ export default function Settings() {
                       </div>
                       <div>
                         <button
-                          className="bg-purple-800 hover:bg-purple-500 text-white mt-6 mb-8 px-4 py-2 rounded-md transition-colors"
+                          className="bg-purple-950 hover:bg-purple-700 font-outfit text-white mt-6 mb-8 px-4 py-2 rounded-xl transition-colors"
                         >
                           Cambiar contraseña
                         </button>
@@ -289,11 +289,11 @@ export default function Settings() {
                         <div className="flex items-center">
                           <div className="bg-green-600 rounded-full w-2 h-2 mr-2"></div>
                           <div>
-                            <p className="text-purple-700 text-sm">Madrid, España (Actual)</p>
-                            <p className="text-purple-700 text-xs">Última actividad: Hace 1 minuto</p>
+                            <p className="text-purple-800 text-sm">Madrid, España (Actual)</p>
+                            <p className="text-purple-800 text-xs">Última actividad: Hace 1 minuto</p>
                           </div>
                         </div>
-                        <button className="text-purple-500 hover:text-red-300 text-sm">
+                        <button className="text-purple-600 hover:text-red-300 text-sm">
                           Cerrar
                         </button>
                       </div>
@@ -306,17 +306,17 @@ export default function Settings() {
             {/* Appearance settings */}
             {activeTab === 'appearance' && (
               <div>
-                <h2 className="text-xl font-bold text-purple-950 mb-6">Apariencia</h2>
+                <h2 className="text-xl font-bold text-purple-950 font-outfit mb-6">Apariencia</h2>
                 
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-purple-800 text-sm font-medium mb-2">
+                    <label className="block text-purple-900 text-sm font-medium mb-2">
                       Tema
                     </label>
                     <div className="grid grid-cols-3 gap-4">
                       <div 
-                        className={`cursor-pointer p-4 rounded-lg flex flex-col items-center ${
-                          theme === 'dark' ? 'bg-purple-800 text-white' : 'bg-white text-purple-800 bg-opacity-5'
+                        className={`cursor-pointer p-4 rounded-xl flex flex-col items-center ${
+                          theme === 'dark' ? 'bg-purple-900 text-white' : 'bg-white text-purple-900 bg-opacity-5'
                         }`}
                         onClick={() => setTheme('dark')}
                       >
@@ -329,8 +329,8 @@ export default function Settings() {
                       </div>
                       
                       <div 
-                        className={`cursor-pointer p-4 rounded-lg flex flex-col items-center ${
-                          theme === 'light' ? 'bg-purple-800 text-white' : 'bg-white text-purple-800 bg-opacity-5'
+                        className={`cursor-pointer p-4 rounded-xl flex flex-col items-center ${
+                          theme === 'light' ? 'bg-purple-900 text-white' : 'bg-white text-purple-900 bg-opacity-5'
                         }`}
                         onClick={() => setTheme('light')}
                       >
@@ -343,8 +343,8 @@ export default function Settings() {
                       </div>
                       
                       <div 
-                        className={`cursor-pointer p-4 rounded-lg flex flex-col items-center ${
-                          theme === 'system' ? 'bg-purple-800 text-white' : 'bg-white text-purple-800 bg-opacity-5'
+                        className={`cursor-pointer p-4 rounded-xl flex flex-col items-center ${
+                          theme === 'system' ? 'bg-purple-900 text-white' : 'bg-white text-purple-900 bg-opacity-5'
                         }`}
                         onClick={() => setTheme('system')}
                       >
@@ -365,7 +365,7 @@ export default function Settings() {
             <div className="mt-6 flex justify-end">
               <button
                 onClick={handleSaveSettings}
-                className="bg-purple-800 hover:bg-purple-500 text-white px-6 py-2 rounded-md transition-colors"
+                className="bg-purple-950 hover:bg-purple-500 text-white font-outfit px-6 py-2 rounded-xl transition-colors"
               >
                 Guardar configuración
               </button>

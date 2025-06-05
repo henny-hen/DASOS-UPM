@@ -37,7 +37,7 @@ export default function EvaluationDetails({
         {/* Continuous evaluation */}
         {continuousActivities.length > 0 && (
           <div className="p-4 border-b border-purple-900 border-opacity-30">
-            <h4 className="text-lg font-semibold font-outfit text-purple-700 mb-3">Evaluación continua</h4>
+            <h4 className="text-lg font-semibold font-outfit text-purple-900 mb-3">Evaluación continua</h4>
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
@@ -72,7 +72,7 @@ export default function EvaluationDetails({
         {/* Final exam */}
         {finalActivities.length > 0 && (
           <div className="p-4 border-b border-purple-900 border-opacity-30">
-            <h4 className="text-lg font-semibold font-outfit text-purple-700 mb-3">Evaluación global</h4>
+            <h4 className="text-lg font-semibold font-outfit text-purple-900 mb-3">Evaluación global</h4>
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>

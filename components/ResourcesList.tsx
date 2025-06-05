@@ -18,8 +18,8 @@ export default function ResourcesList({ resources }: ResourcesListProps) {
         <ul className="space-y-2">
           {bibliografia.map((book, index) => (
             <li key={index} className="flex items-start">
-              <span className="text-purple-300 mr-2">•</span>
-              <span className="text-sm text-purple-500">{book}</span>
+              <span className="text-purple-700 mr-2">•</span>
+              <span className="text-sm text-purple-800">{book}</span>
             </li>
           ))}
         </ul>
@@ -32,14 +32,14 @@ export default function ResourcesList({ resources }: ResourcesListProps) {
           <ul className="space-y-2">
             {webResources.map((resource, index) => (
               <li key={index} className="flex items-start">
-                <span className="text-purple-300 mr-2">•</span>
-                <span className="text-sm text-purple-500">
+                <span className="text-purple-700 mr-2">•</span>
+                <span className="text-sm text-purple-800">
                   {resource.startsWith('http') ? (
                     <a 
                       href={resource} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-purple-400 hover:text-black transition-colors underline"
+                      className="text-purple-600 hover:text-black transition-colors underline"
                     >
                       {resource}
                     </a>
