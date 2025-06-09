@@ -1,0 +1,72 @@
+{
+  "subjects": [
+    {
+      "subject_code": "105000005",
+      "subject_name": "Cálculo",
+      "credits": 6,
+      "academic_year": "2023-24",
+      "semester": "Segundo",
+      "total_enrolled": 455,
+      "first_time": 248,
+      "partial_dedication": 0,
+      "performance_rate": 31.94,
+      "success_rate": 36.52,
+      "absenteeism_rate": 12.56
+    },
+    {
+      "subject_code": "105000007",
+      "subject_name": "Probabilidades y Estadística I",
+      "credits": 6,
+      "academic_year": "2023-24",
+      "semester": "Segundo",
+      "total_enrolled": 267,
+      "performance_rate": 89.14,
+      "success_rate": 92.97,
+      "absenteeism_rate": 4.12
+    },
+    {
+      "subject_code": "105000012",
+      "subject_name": "Sistemas Digitales",
+      "credits": 6,
+      "academic_year": "2023-24",
+      "semester": "Segundo",
+      "total_enrolled": 313,
+      "performance_rate": 63.26,
+      "success_rate": 67.58,
+      "absenteeism_rate": 6.39
+    }
+  ],
+  "stats": {
+    "total_subjects": 5,
+    "total_academic_years": 4,
+    "academic_years": ["2020-21", "2021-22", "2022-23", "2023-24"],
+    "total_historical_rates": 60,
+    "has_api_analysis": true
+  },
+  "historical": [
+    {
+      "subject_code": "105000005",
+      "academic_year": "2020-21",
+      "rate_type": "rendimiento",
+      "value": 31.32
+    },
+    {
+      "subject_code": "105000005",
+      "academic_year": "2021-22",
+      "rate_type": "rendimiento",
+      "value": 35.12
+    },
+    {
+      "subject_code": "105000005",
+      "academic_year": "2022-23",
+      "rate_type": "rendimiento",
+      "value": 32.49
+    },
+    {
+      "subject_code": "105000005",
+      "academic_year": "2023-24",
+      "rate_type": "rendimiento",
+      "value": 31.94
+    }
+  ]
+}

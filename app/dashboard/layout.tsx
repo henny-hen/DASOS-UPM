@@ -7,6 +7,10 @@ import { useAuth } from '@/context/auth';
 import { AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
+import KeyboardShortcutsModal from '@/components/KeyboardShortcutsModal';
+import { use } from 'chai';
+
 
 interface DashboardLayoutProps {
   children: ReactNode;
@@ -20,6 +24,7 @@ export default function DashboardLayout({
   const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
 
+  useKeyboardShortcuts();
   // Check if we're on mobile
   useEffect(() => {
     const checkScreenSize = () => {
@@ -70,17 +75,18 @@ export default function DashboardLayout({
   }
 
   return (
-    <div
+    <main
       className="h-min-screen flex bg-gradient-to-br from-[#2c015e] via-[#4c1d95] animated-gradient to-[#170030] opacity-100 backdrop-blur-sm animate-gradient text-white scrollbar-hidden overflow-hidden"
       role="main"
       tabIndex={-1}
-      aria-label="Dashboard main content"
+      aria-label="DASOS UPM"
     >
       {/* Desktop Sidebar */}
       {!isMobile && (
         <nav
           className='h-screen flex w-[14%] md:w-[8%] lg:w-[14%] xl:w-[14%] fixed left-0 top-0 z-30'
-          aria-label="Sidebar navigation"
+          aria-label="navigation"
+          role="navigation"
         >
           <Menu user={user} />
         </nav>
@@ -90,18 +96,21 @@ export default function DashboardLayout({
       {isMobile && <Menu user={user} />}
       
       {/* Main content */}
-      <main
+      <div
+        id="main-content"
+        aria-label='Dashboard content'
+        tabIndex={-1}  
         className={`min-h-screen focus:outline-none overflow-y-auto scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-transparent
           ${isMobile 
             ? 'w-full scrollbar-thumb-purple-500 scrollbar-track-transparent' 
             : ' h-screen w-[86%] md:w-[92%] lg:w-[86%] xl:w-[86%] ml-[14%] md:ml-[8%] lg:ml-[14%] xl:ml-[14%]'
           }
         `}
-        aria-label="Dashboard content"
+
       >
         {children}
-      </main>
-      
-    </div>
+      </div>
+      <KeyboardShortcutsModal />
+    </main>
   );
 }

@@ -96,7 +96,7 @@ export default function Login() {
             <input
               id="email"
               type="email"
-              className="w-full p-3 bg-white bg-opacity-10 text-gray-500 border border-purple-300 border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-3 bg-white bg-opacity-10 text-gray-500 border border-purple-300 border-opacity-30 rounded-md focus:outline-dashed focus:ring-2 focus:ring-purple-500"
               placeholder="correo@upm.es"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -104,8 +104,9 @@ export default function Login() {
               autoComplete="username"
               aria-required="true"
               aria-label="Correo electrónico"
+              aria-live='polite'
             />
-            <p className="text-xs text-purple-300 mt-1" id="email-help">
+            <p className="text-xs text-purple-700 mt-1" id="email-help">
               Demo: student@example.com
             </p>
           </div>
@@ -120,7 +121,7 @@ export default function Login() {
             <input
               id="password"
               type="password"
-              className="w-full p-3 bg-white bg-opacity-10 text-gray-500 border border-purple-300 border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-3 bg-white bg-opacity-10 text-gray-500 border border-purple-300 border-opacity-30 rounded-md focus:outline-dashed focus:ring-2 focus:ring-purple-500"
               placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -128,16 +129,18 @@ export default function Login() {
               autoComplete="current-password"
               aria-required="true"
               aria-label="Contraseña"
+              aria-live='polite'
             />
-            <p className="text-xs text-purple-300 mt-1" id="password-help">
+            <p className="text-xs text-purple-700 mt-1" id="password-help">
               Demo: cualquier contraseña vale
             </p>
           </div>
 
           <button
             type="submit"
-            className="w-full bg-purple-900 hover:bg-purple-700 text-white p-2.5 rounded-xl transition-colors font-outfit font-medium text-lg flex items-center justify-center"
+            className="w-full bg-purple-900 hover:bg-purple-700 text-white p-2.5 rounded-xl transition-colors focus:outline-dashed focus:ring-2 focus:ring-purple-500 font-outfit font-medium text-lg flex items-center justify-center"
             disabled={loading}
+            aria-live='polite'
             aria-busy={loading}
             aria-label={loading ? 'Iniciando sesión' : 'Iniciar sesión'}
           >

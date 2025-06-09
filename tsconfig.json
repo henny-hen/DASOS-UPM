@@ -20,8 +20,10 @@
     ],
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "types": ["cypress", "cypress-axe"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "../node_modules/cypress",
+    "../node_modules/@types/cypress"],
   "exclude": ["node_modules"]
 }

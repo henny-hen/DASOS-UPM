@@ -29,7 +29,7 @@ export default function EvaluationDetails({
   return (
     <div>
       {/* Evaluation Activities */}
-      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl bg-opacity-10  drop-shadow-lg overflow-hidden shadow-lg mb-6">
+      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl bg-opacity-10  drop-shadow-lg shadow-lg mb-6">
         <div className="p-4 bg-purple-900 bg-opacity-50">
           <h3 className="text-2xl font-outfit font-bold text-white">Actividades de evaluación</h3>
         </div>

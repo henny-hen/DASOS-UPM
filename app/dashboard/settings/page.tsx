@@ -91,9 +91,8 @@ export default function Settings() {
           <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 shadow-xl ">
             {/* General settings */}
             {activeTab === 'general' && (
-              <div>
-                <h2 className="text-xl font-bold text-purple-950 font-outfit mb-6">Configuración general</h2>
-                
+              <fieldset>
+                <legend className="text-2xl font-bold text-purple-950 font-outfit mb-6">Configuración general</legend>
                 <div className="space-y-6">
                   <div>
                     <label className="block text-purple-900 text-sm font-medium mb-2">
@@ -123,7 +122,7 @@ export default function Settings() {
                     </select>
                   </div>
                 </div>
-              </div>
+              </fieldset>
             )}
             
             {/* Notifications settings */}

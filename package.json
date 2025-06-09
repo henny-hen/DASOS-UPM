@@ -6,7 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:verify": "cypress verify",
+    "cypress:install": "cypress install",
+    "cypress:check": "cypress check",
+    "cypress:version": "cypress version",
+    "cypress:info": "cypress info",
+    "cypress:record": "cypress run --record --key YOUR_RECORD_KEY",
+    "cypress:run:ci": "cypress run --browser chrome --headless",
+    "cypress:run:debug": "cypress run --browser chrome --headed",
+    "cypress:run:electron": "cypress run --browser electron",
+    "cypress:run:firefox": "cypress run --browser firefox",
+    "cypress:run:webkit": "cypress run --browser webkit",
+    "cypress:run:chromium": "cypress run --browser chromium"
   },
   "dependencies": {
     "@tailwindcss/oxide-linux-x64-gnu": "^4.0.0-alpha.35",
@@ -35,7 +49,12 @@
     "web-vitals": "^5.0.1"
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.14.4",
+    "@testing-library/cypress": "^10.0.3",
+    "@types/cypress": "^0.1.6",
     "@types/js-cookie": "^3.0.6",
-    "@typescript-eslint/eslint-plugin": "^8.32.1"
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
+    "cypress": "^14.4.1",
+    "cypress-axe": "^1.6.0"
   }
 }

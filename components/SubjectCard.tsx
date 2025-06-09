@@ -45,7 +45,7 @@ export default function SubjectCard({ subject, index = 0 }: SubjectCardProps) {
       className="group"
     >
       <Link href={`/dashboard/subjectdata/${subject.subject_code}`}>
-        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 shadow-lg border border-purple-300 border-opacity-20 hover:bg-opacity-20 transition-all duration-300 h-full cursor-pointer">
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 shadow-lg  hover:bg-opacity-20 transition-all duration-300 h-full cursor-pointer">
           <div className="flex justify-between items-start mb-4">
             <div className="flex-1">
               <motion.h3 
