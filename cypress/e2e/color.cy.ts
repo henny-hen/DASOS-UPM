@@ -13,7 +13,7 @@ describe('Color accesibility Tests', () => {
   describe('Color Contrast', () => {
     it('should have sufficient color contrast ratios', () => {
       // This is checked by axe-core, but we can add specific tests
-      cy.checkA11y(null, {
+      cy.checkA11y(undefined, {
         rules: {
           'color-contrast': { enabled: true }
         }

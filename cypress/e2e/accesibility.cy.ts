@@ -10,7 +10,7 @@ describe('Accessibility Tests', () => {
 
   describe('WCAG 2.1 Level AA Compliance', () => {
     it('should meet accessibility standards on login page', () => {
-      cy.checkA11y(null, {
+      cy.checkA11y(undefined, {
         runOnly: {
           type: 'tag',
           values: ['wcag2a', 'wcag2aa']
@@ -22,7 +22,7 @@ describe('Accessibility Tests', () => {
       cy.login('student@example.com', 'password123');
       cy.injectAxe();
       
-      cy.checkA11y(null, {
+      cy.checkA11y(undefined, {
         runOnly: {
           type: 'tag',
           values: ['wcag2a', 'wcag2aa']
@@ -35,7 +35,7 @@ describe('Accessibility Tests', () => {
       cy.visit('/dashboard/subjectdata/105000005');
       cy.injectAxe();
       
-      cy.checkA11y(null, {
+      cy.checkA11y(undefined, {
         runOnly: {
           type: 'tag',
           values: ['wcag2a', 'wcag2aa']
