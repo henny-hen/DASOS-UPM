@@ -12,6 +12,7 @@ import PerformanceChart from '@/components/PerformanceChart';
 import FacultyChanges from '@/components/FacultyChanges';
 import EvaluationMethods from '@/components/EvaluationMethods';
 import InsightCard from '@/components/InsightCard';
+import MetricTooltip from '@/components/MetricTooltip';
 
 interface SubjectDetailsPageProps {
   params: Promise<{
@@ -52,6 +53,12 @@ async function SubjectDetailsPage({ params }: SubjectDetailsPageProps) {
     return notFound();
   }
 
+  const tooltipDescriptions = {
+    rendimiento: "Estudiantes que aprueban la asignatura respecto al total de estudiantes matriculados.",
+    exito: "Estudiantes que aprueban la asignatura respecto al total de estudiantes que se presentaron a la evaluación.",
+    absentismo: "Estudiantes matriculados que no se presentaron a ninguna actividad de evaluación."
+  };
+
   return (
     <div>
       {/* Subject header border border-purple-300 border-opacity-20 */}
@@ -91,7 +98,13 @@ async function SubjectDetailsPage({ params }: SubjectDetailsPageProps) {
         {subject.performance_rate !== undefined && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
             <div className="bg-white bg-opacity-5 rounded-lg p-4">
+              <MetricTooltip
+                title="Tasa de Rendimiento"
+                description={tooltipDescriptions.rendimiento}
+                position="top"
+                >
               <h3 className="text-md font-medium text-fuchsia-900 mb-2">Tasa de rendimiento</h3>
+              </MetricTooltip>
               <div className="flex items-end">
                 <span className="text-3xl font-bold text-purple-900">{subject.performance_rate.toFixed(1)}%</span>
                 <span className="text-base font-outfit text-purple-700 ml-2 mb-1">aprobados / matriculados</span>
@@ -100,7 +113,13 @@ async function SubjectDetailsPage({ params }: SubjectDetailsPageProps) {
             
             {subject.success_rate !== undefined && (
               <div className="bg-white bg-opacity-5 rounded-lg p-4">
+                <MetricTooltip
+                title="Tasa de Éxito"
+                description={tooltipDescriptions.exito}
+                position="top"
+                >
                 <h3 className="text-md font-medium text-fuchsia-900 mb-2">Tasa de éxito</h3>
+                </MetricTooltip>
                 <div className="flex items-end">
                   <span className="text-3xl font-bold text-purple-900">{subject.success_rate.toFixed(1)}%</span>
                   <span className="text-base font-outfit text-purple-700 ml-2 mb-1">aprobados / presentados</span>
@@ -110,7 +129,13 @@ async function SubjectDetailsPage({ params }: SubjectDetailsPageProps) {
             
             {subject.absenteeism_rate !== undefined && (
               <div className="bg-white bg-opacity-5 rounded-lg p-4">
+                <MetricTooltip
+                title="Tasa de Absentismo"
+                description={tooltipDescriptions.absentismo}
+                position="top"
+                >                
                 <h3 className="text-md font-medium text-fuchsia-900 mb-2">Tasa de absentismo</h3>
+                </MetricTooltip>
                 <div className="flex items-end">
                   <span className="text-3xl font-bold text-purple-900">{subject.absenteeism_rate.toFixed(1)}%</span>
                   <span className="text-base font-outfit text-purple-700 ml-2 mb-1">no presentados / matriculados</span>
